@@ -35,9 +35,9 @@ from transformers import (
     AdamW,
     AutoConfig,
     AutoTokenizer,
-    # get_linear_schedule_with_warmup,
+    get_linear_schedule_with_warmup,
 )
-from transformers import WarmupLinearSchedule as get_linear_schedule_with_warmup
+# from transformers import WarmupLinearSchedule as get_linear_schedule_with_warmup
 from models.model_ner import MODEL_FOR_CRF_NER_MAPPING, AutoModelForCrfNer
 
 from utils.utils_ner import convert_examples_to_features, get_labels, read_examples_from_file, collate_fn
