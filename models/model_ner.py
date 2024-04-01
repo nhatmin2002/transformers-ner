@@ -13,11 +13,11 @@ from models.distilbert_ner import DistilBertCrfForNer, DistilBertSoftmaxForNer, 
 
 MODEL_FOR_SOFTMAX_NER_MAPPING = OrderedDict(
     [
-        (XLMConfig, XLMSoftmaxForNer),
-        (DistilBertConfig, DistilBertSoftmaxForNer),
+        # (XLMConfig, XLMSoftmaxForNer),
+        # (DistilBertConfig, DistilBertSoftmaxForNer),
         (RobertaConfig, RobertaSoftmaxForNer),
-        (CamembertConfig, RobertaSoftmaxForNer),
-        (XLMRobertaConfig, RobertaSoftmaxForNer),
+        # (CamembertConfig, RobertaSoftmaxForNer),
+        # (XLMRobertaConfig, RobertaSoftmaxForNer),
         (BertConfig, BertSoftmaxForNer),
         (AlbertConfig, AlbertSoftmaxForNer),
         (ElectraConfig, ElectraSoftmaxForNer),
@@ -27,10 +27,10 @@ MODEL_FOR_SOFTMAX_NER_MAPPING = OrderedDict(
 MODEL_FOR_CRF_NER_MAPPING = OrderedDict(
     [
         # (XLMConfig, XLMCrfForNer),
-        (DistilBertConfig, DistilBertCrfForNer),
+        # (DistilBertConfig, DistilBertCrfForNer),
         (RobertaConfig, RobertaCrfForNer),
-        (CamembertConfig, RobertaCrfForNer),
-        (XLMRobertaConfig, RobertaCrfForNer),
+        # (CamembertConfig, RobertaCrfForNer),
+        # (XLMRobertaConfig, RobertaCrfForNer),
         (BertConfig, BertCrfForNer),
         (AlbertConfig, AlbertCrfForNer),
         (ElectraConfig, ElectraCrfForNer),
