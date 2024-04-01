@@ -8,7 +8,7 @@ from models.albert_ner import AlbertCrfForNer, AlbertSoftmaxForNer, AlbertSpanFo
 from models.bert_ner import BertCrfForNer, BertSoftmaxForNer, BertSpanForNer
 from models.electra_ner import ElectraCrfForNer, ElectraSoftmaxForNer, ElectraSpanForNer
 from models.roberta_ner import RobertaCrfForNer, RobertaSoftmaxForNer, RobertaSpanForNer
-from models.xlm_ner import XLMCrfForNer, XLMSoftmaxForNer, XLMSpanForNer
+# from models.xlm_ner import XLMCrfForNer, XLMSoftmaxForNer, XLMSpanForNer
 from models.distilbert_ner import DistilBertCrfForNer, DistilBertSoftmaxForNer, DistilBertSpanForNer
 
 MODEL_FOR_SOFTMAX_NER_MAPPING = OrderedDict(
@@ -26,7 +26,7 @@ MODEL_FOR_SOFTMAX_NER_MAPPING = OrderedDict(
 
 MODEL_FOR_CRF_NER_MAPPING = OrderedDict(
     [
-        (XLMConfig, XLMCrfForNer),
+        # (XLMConfig, XLMCrfForNer),
         (DistilBertConfig, DistilBertCrfForNer),
         (RobertaConfig, RobertaCrfForNer),
         (CamembertConfig, RobertaCrfForNer),
