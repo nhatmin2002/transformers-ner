@@ -39,11 +39,11 @@ MODEL_FOR_CRF_NER_MAPPING = OrderedDict(
 
 MODEL_FOR_SPAN_NER_MAPPING = OrderedDict(
     [
-        (XLMConfig, XLMSpanForNer),
-        (DistilBertConfig, DistilBertSpanForNer),
+        # (XLMConfig, XLMSpanForNer),
+        # (DistilBertConfig, DistilBertSpanForNer),
         (RobertaConfig, RobertaSpanForNer),
-        (CamembertConfig, RobertaSpanForNer),
-        (XLMRobertaConfig, RobertaSpanForNer),
+        # (CamembertConfig, RobertaSpanForNer),
+        # (XLMRobertaConfig, RobertaSpanForNer),
         (BertConfig, BertSpanForNer),
         (AlbertConfig, AlbertSpanForNer),
         (ElectraConfig, ElectraSpanForNer),
