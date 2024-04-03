@@ -176,7 +176,7 @@ def get_entities_bio(seq):
         elif tag.startswith('I-') and chunk[1] != -1:
             parts = tag.split('-')
             alpha = parts[0]
-            type_= '-'.join(parts[1:])
+            _type = '-'.join(parts[1:])
             # _type = tag.split('-')[1]
             if _type == chunk[0]:
                 chunk[2] = indx
