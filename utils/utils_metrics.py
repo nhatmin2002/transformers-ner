@@ -24,8 +24,10 @@ def get_entities(seq):
     chunks = []
     for i, chunk in enumerate(seq + ['O']):
         tag = chunk[0]
-        type_ = chunk.split('-')[-1]
-
+        parts = chunk.split('-')
+        alpha = parts[0]
+        type_= '-'.join(parts[1:])
+        
         if end_of_chunk(prev_tag, tag, prev_type, type_):
             chunks.append((prev_type, begin_offset, i - 1))
         if start_of_chunk(prev_tag, tag, prev_type, type_):
@@ -164,12 +166,18 @@ def get_entities_bio(seq):
                 chunks.append(chunk)
             chunk = [-1, -1, -1]
             chunk[1] = indx
-            chunk[0] = tag.split('-')[1]
+            # chunk[0] = tag.split('-')[1]
+            parts = tag.split('-')
+            alpha = parts[0]
+            chunk[0] = '-'.join(parts[1:])
             chunk[2] = indx
             if indx == len(seq) - 1:
                 chunks.append(chunk)
         elif tag.startswith('I-') and chunk[1] != -1:
-            _type = tag.split('-')[1]
+            parts = tag.split('-')
+            alpha = parts[0]
+            type_= '-'.join(parts[1:])
+            # _type = tag.split('-')[1]
             if _type == chunk[0]:
                 chunk[2] = indx
 
@@ -184,18 +192,18 @@ def get_entities_bio(seq):
 
 def get_entities_span(starts, ends):
     if any(isinstance(s, list) for s in starts):
-        starts = [item for sublist in starts for item in sublist + ['<SEP>']]
+        starts = [item for sublist in starts for item in sublist + ['</s>']]
     if any(isinstance(s, list) for s in ends):
-        ends = [item for sublist in ends for item in sublist + ['<SEP>']]
+        ends = [item for sublist in ends for item in sublist + ['</s>']]
     chunks = []
     for start_index, start in enumerate(starts):
-        if start in ['O', '<SEP>']:
+        if start in ['O', '</s>']:
             continue
         for end_index, end in enumerate(ends[start_index:]):
             if start == end:
                 chunks.append((start, start_index, start_index + end_index))
                 break
-            elif end == '<SEP>':
+            elif end == '</s>':
                 break
     return set(chunks)
 
