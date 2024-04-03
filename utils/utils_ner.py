@@ -89,10 +89,13 @@ def convert_examples_to_features(
     label_map = {label: i for i, label in enumerate(label_list)}
     span_labels = []
     for label in label_list:
+        if label=='O':
+            label=='O'
+        else:
             parts = label.split('-')
             alpha = parts[0]
             label= '-'.join(parts[1:])
-            if label not in span_labels:
+        if label not in span_labels:
                 span_labels.append(label)
     span_map = {label: i for i, label in enumerate(span_labels)}
     features = []
