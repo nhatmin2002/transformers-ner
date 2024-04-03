@@ -342,7 +342,7 @@ def evaluate(args, model, tokenizer, labels, pad_token_label_id, mode, prefix=""
     print(label_map)
     trues_list = [[] for _ in range(trues.shape[0])]
     preds_list = [[] for _ in range(preds.shape[0])]
-    print(true_list)
+    print(trues_list)
     print(preds_list)
     for i in range(trues.shape[0]):
         for j in range(trues.shape[1]):
