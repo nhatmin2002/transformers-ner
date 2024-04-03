@@ -51,10 +51,10 @@ def read_examples_from_file(data_dir, mode):
                     words = []
                     labels = []
             else:
-                splits = line.split(" ")
+                splits = line.strip().split("\t")  # Sửa đổi tại đây
                 words.append(splits[0])
                 if len(splits) > 1:
-                    labels.append(splits[-1].replace("\n", ""))
+                    labels.append(splits[1])  # Sửa đổi tại đây
                 else:
                     # Examples could have no label for mode = "test"
                     labels.append("O")
