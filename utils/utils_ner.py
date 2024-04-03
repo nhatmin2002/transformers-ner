@@ -69,9 +69,9 @@ def convert_examples_to_features(
         max_seq_length,
         tokenizer,
         cls_token_at_end=False,
-        cls_token="[CLS]",
+        cls_token="<s>", #"[CLS]"
         cls_token_segment_id=1,
-        sep_token="[SEP]",
+        sep_token="</s>", #"[SEP]"
         sep_token_extra=False,
         pad_on_left=False,
         pad_token=0,
