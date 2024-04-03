@@ -116,8 +116,6 @@ def convert_examples_to_features(
                 tokens.append(word_token)
         label_ids = [label_map[label] for label in example.labels]
         entities = get_entities(example.labels)
-        print(label_ids[0])
-        print(entities[0])
         start_ids = [span_map['O']] * len(label_ids)
         end_ids = [span_map['O']] * len(label_ids)
         for entity in entities:
