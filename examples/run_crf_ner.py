@@ -339,7 +339,7 @@ def evaluate(args, model, tokenizer, labels, pad_token_label_id, mode, prefix=""
 
     eval_loss = eval_loss / nb_eval_steps
     label_map = {i: label for i, label in enumerate(labels)}
-
+    print(label_map)
     trues_list = [[] for _ in range(trues.shape[0])]
     preds_list = [[] for _ in range(preds.shape[0])]
 
